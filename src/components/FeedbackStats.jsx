@@ -4,9 +4,11 @@ import FeedbackContext from '../context/FeedbackContext'
 function FeedbackStats() {
   const{feedback} = useContext(FeedbackContext)
 
+
     let average = feedback.reduce((accumelator, current) => {
         return accumelator + current.rating
     }, 0) / feedback.length
+
 
     average = average.toFixed(1).replace(/[.,]0$/, '')
   return (
